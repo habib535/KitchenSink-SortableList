@@ -1,0 +1,61 @@
+﻿<!--font awesome-->
+<link rel="stylesheet" href="/sys/font-awesome-4.7.0/css/font-awesome.min.css" />
+<!--libraries for enabling drag-drop-->
+<script src="http://juicy.github.io/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="http://juicy.github.io/juicy-draggable/juicy-draggable.html" />
+
+<template>
+    <template is="dom-bind" id="sortable-list-template">
+        <p class="lead">Please change the order using <code>thumbs</code> icon OR <code>drag n drop</code>(not functional)</p>
+        <table class="table table-striped table-hover sortable-list-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <template is="dom-repeat" items="{{model.PersonList}}">
+                    <tr>
+                        <td>{{item.FirstName}}</td>
+                        <td>{{item.LastName}}</td>
+                        <td>
+                            <a class="kitchensink-move-up-row" title="move up">
+                                <i class="fa fa-thumbs-up fa-2x" aria-hidden="true" value="{{item.MoveUp$::click}}" onmousedown="++this.value;"></i>
+                            </a>
+                            <a class="kitchensink-move-down-row" title="move down">
+                                <i class="fa fa-thumbs-down fa-2x" aria-hidden="true" value="{{item.MoveDown$::click}}" onmousedown="++this.value;"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <juicy-draggable class="fixed-drop" dropselector="tr" on-juicy-draggable-stop="itemDropped">
+                                <p class="kitchensink-drag-row" title="drag this row">
+                                    <i class="fa fa-arrows fa-2x" aria-hidden="true" value="{{item.ItemDropped$}}"></i>
+                                </p>
+                            </juicy-draggable>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+    <script>
+        (function () {
+            var template = document.querySelector("#sortable-list-template");
+            console.info(template);
+            template.itemDropped = function (event) {
+                console.info(event);
+                if (!event.detail.dropElement) {
+                    return;
+                }
+                var drag = event.detail.dragElement;
+                var drop = event.detail.dropElement;
+
+                //trigger ItemDropped event
+                template.set("model.ItemDropped$", parseInt(template.get("model.ItemDropped$"), 10) + 1);
+            };
+        })();
+    </script>
+</template>

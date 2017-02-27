@@ -1,0 +1,10 @@
+C:\Users\habib\Downloads\KitchenSink-master\KitchenSink-master\bin\Debug\KitchenSink.exe
+C:\Users\habib\Downloads\KitchenSink-master\KitchenSink-master\bin\Debug\KitchenSink.pdb
+C:\Users\habib\Downloads\KitchenSink-master\KitchenSink-master\src\KitchenSink\obj\x64\Debug\KitchenSink.csprojResolveAssemblyReference.cache
+C:\Users\habib\Downloads\KitchenSink-master\KitchenSink-master\src\KitchenSink\obj\x64\Debug\KitchenSink.exe
+C:\Users\habib\Downloads\KitchenSink-master\KitchenSink-master\src\KitchenSink\obj\x64\Debug\KitchenSink.pdb
+D:\Projects\KitchenSink-Samples\bin\Debug\KitchenSink.exe
+D:\Projects\KitchenSink-Samples\bin\Debug\KitchenSink.pdb
+D:\Projects\KitchenSink-Samples\src\KitchenSink\obj\x64\Debug\KitchenSink.csprojResolveAssemblyReference.cache
+D:\Projects\KitchenSink-Samples\src\KitchenSink\obj\x64\Debug\KitchenSink.exe
+D:\Projects\KitchenSink-Samples\src\KitchenSink\obj\x64\Debug\KitchenSink.pdb
